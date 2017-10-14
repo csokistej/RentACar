@@ -14,7 +14,7 @@ A projekt egy webes alkalmazás, melyen vendég felhasználók ingyenesen regisz
 A használati eseteket (belépés / regisztráció / bérlés) az alábbi használati eset diagramm ábrázolja.
 
 **Regisztráció (UseCase 1)**
-![use case 1](RentACar/usecase1.png)
+![use case 1](https://github.com/csokistej/RentACar/blob/master/usecase1.png)
 
 **Belépés (UseCase 2)**
 ![use case 2](RentACar/usecase2.png)
