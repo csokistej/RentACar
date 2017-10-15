@@ -53,6 +53,8 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
 ![UML Class Diagram](https://github.com/csokistej/RentACar/blob/master/UMLClassDiagram.png)
 
 ### **2.3. Adatbázisterv**
+![database_ek_diagram](https://github.com/csokistej/RentACar/blob/master/db_er_diagram.PNG)
+
 ## Szerepkörök:
   - **User Role**: felhasználói szerepkör, autóbérlésre jogosult
 
