@@ -70,4 +70,12 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
     Input: "testUser", null, "test@test.com", "LastName", "FisrtName", "123456789", "Test Town, Test Street 42."
     Output: Error message.
 
+### **Belépés (UseCase 2)**
+  #### **Test 1**
+    Input: "testUser", "supers3cret"
+    Output: Go to rent site.
+  #### **Test 2**
+    Input: "testUser", null
+    Output: Error message.
+
 ## 5. **Felhasználói dokumentáció**
