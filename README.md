@@ -62,4 +62,12 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
 
 ## **4.Tesztelés**
 
+### **Regisztráció (UseCase 1)**
+  #### **Test 1**
+    Input: "testUser", "supers3cret", "test@test.com", "LastName", "FisrtName", "123456789", "Test Town, Test Street 42."
+    Output: Send feedback message.
+  #### **Test 2**
+    Input: "testUser", null, "test@test.com", "LastName", "FisrtName", "123456789", "Test Town, Test Street 42."
+    Output: Error message.
+
 ## 5. **Felhasználói dokumentáció**
