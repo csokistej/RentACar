@@ -13,15 +13,15 @@ A projekt egy webes alkalmazás, melyen vendég felhasználók ingyenesen regisz
 
 A használati eseteket (belépés / regisztráció / bérlés) az alábbi használati eset diagramm ábrázolja.
 
-**Regisztráció (UseCase 1)**
+**Register (UseCase 1)**
 
 ![use case 1](https://github.com/csokistej/RentACar/blob/master/usecase1.png)
 
-**Belépés (UseCase 2)**
+**Login (UseCase 2)**
 
 ![use case 2](https://github.com/csokistej/RentACar/blob/master/usecase2.png)
 
-**Bérlés (UseCase 3)**
+**Rent (UseCase 3)**
 
 ![use case 3](https://github.com/csokistej/RentACar/blob/master/usecase3.png)
 
@@ -62,7 +62,7 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
 
 ## **4.Tesztelés**
 
-### **Regisztráció (UseCase 1)**
+### **Register (UseCase 1)**
   #### **Test 1**
     Input: "testUser", "supers3cret", "test@test.com", "LastName", "FisrtName", "123456789", "Test Town, Test Street 42."
     Output: Send feedback message.
@@ -70,12 +70,20 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
     Input: "testUser", null, "test@test.com", "LastName", "FisrtName", "123456789", "Test Town, Test Street 42."
     Output: Error message.
 
-### **Belépés (UseCase 2)**
+### **Login (UseCase 2)**
   #### **Test 1**
     Input: "testUser", "supers3cret"
     Output: Go to rent site.
   #### **Test 2**
     Input: "testUser", null
+    Output: Error message.
+
+### **Rent (UseCase 3)**
+  #### **Test 1**
+    Input: Go to rent site. -> Select available car -> Fill start date and end date field
+    Output: Send feedback message..
+  #### **Test 2**
+    Input: Go to rent site. -> Select available car -> Fill has just start date
     Output: Error message.
 
 ## 5. **Felhasználói dokumentáció**
