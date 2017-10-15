@@ -26,13 +26,12 @@ A használati eseteket (belépés / regisztráció / bérlés) az alábbi haszn�
 ![use case 3](https://github.com/csokistej/RentACar/blob/master/usecase3.png)
 
 ### **1.4 Non-Funkciónális követelmények**
-**Fejlesztési módszertan:** Agile
+
+**Fejlesztési módszertan:** Agile 
 **Projekt menedszment:** SCRUM
 
 - A SCRUM módszer analógiájára, a fejlesztés során, a fejlesztők 1-2 hetes sprinteken vesznek részt, részletezve a haladási folyamatot, megszerzett fejlesztési tapasztalatokat, és konkluziókat.
-
-A 
-Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik. 
+- A Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik. 
 <!-- Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik.   -->
 
 **Hardver igény:** cpu:Pentium 4, RAM: 2 GB, video: 1280x1024
