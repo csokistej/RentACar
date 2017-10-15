@@ -26,10 +26,15 @@ A használati eseteket (belépés / regisztráció / bérlés) az alábbi haszn�
 ![use case 3](https://github.com/csokistej/RentACar/blob/master/usecase3.png)
 
 ### **1.4 Non-Funkciónális követelmények**
-**Fejlesztési módszertan:** Agile / Scrum
+**Fejlesztési módszertan:** Agile
+**Projekt menedszment:** SCRUM
 
-[//]Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik. 
+- A SCRUM módszer analógiájára, a fejlesztés során, a fejlesztők 1-2 hetes sprinteken vesznek részt, részletezve a haladási folyamatot, megszerzett fejlesztési tapasztalatokat, és konkluziókat.
+
+A 
+Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik. 
 <!-- Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik.   -->
+
 **Hardver igény:** cpu:Pentium 4, RAM: 2 GB, video: 1280x1024
 **Szoftver igény:**
   - OS:független
@@ -68,9 +73,9 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
 A fejlesztés során az alábbi fejlesztői eszközök segítségét vettük alapul, mind a megvalósítás kódjának, mind a látványtervek 
 elkészítésére. 
 
-  **IDE:** Neatbeans 8.2.
-  **Tervezési eszközök:** MS Visio, SqlDeveloper
-  **Projekt eszközök:** Git Bash, Git GUI, webes felület (github.com)
+ **IDE:** Neatbeans 8.2.
+ **Tervezési eszközök:** MS Visio, SqlDeveloper
+ **Projekt eszközök:** Git Bash, Git GUI, webes felület (github.com)
 
 ## **4.Tesztelés**
 
