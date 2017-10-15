@@ -14,13 +14,16 @@ A projekt egy webes alkalmazás, melyen vendég felhasználók ingyenesen regisz
 A használati eseteket (belépés / regisztráció / bérlés) az alábbi használati eset diagramm ábrázolja.
 
 **Regisztráció (UseCase 1)**
+
 ![use case 1](https://github.com/csokistej/RentACar/blob/master/usecase1.png)
 
 **Belépés (UseCase 2)**
-![use case 2](RentACar/usecase2.png)
+
+![use case 2](https://github.com/csokistej/RentACar/blob/master/usecase2.png)
 
 **Bérlés (UseCase 3)**
-![use case 3](RentACar/usecase3.png)
+
+![use case 3](https://github.com/csokistej/RentACar/blob/master/usecase3.png)
 
 ### **1.4 Non-Funkciónális követelmények**
 **Hardver igény:** cpu:Pentium 4, RAM: 2 GB, video: 1280x1024
@@ -47,7 +50,7 @@ A szoftver megfelel a MVC architeltúrának. A projektet Spring keretrendszer se
 ### **2.2. Osztálymodell**
 A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázolja: 
 
-![UML Class Diagram](RentACar/UMLClassDiagram.png)
+![UML Class Diagram](https://github.com/csokistej/RentACar/blob/master/UMLClassDiagram.png)
 
 ### **2.3. Adatbázisterv**
 ## Szerepkörök:
