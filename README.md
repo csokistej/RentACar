@@ -26,19 +26,23 @@ A használati eseteket (belépés / regisztráció / bérlés) az alábbi haszn�
 ![use case 3](https://github.com/csokistej/RentACar/blob/master/usecase3.png)
 
 ### **1.4 Non-Funkciónális követelmények**
+**Fejlesztési módszertan:** Agile / Scrum
+
+[//]Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik. 
+<!-- Későbbiekben a tesztelési módszertan, TDD (Test Driven Development) alapokon zajlik.   -->
 **Hardver igény:** cpu:Pentium 4, RAM: 2 GB, video: 1280x1024
 **Szoftver igény:**
   - OS:független
   - CASE eszköz: Enterprise Architect 8
-  - IDE: Neatbeans 6.9.1
+  - IDE: Neatbeans 8.2.
   - Egyéb követelmények: felhasználó barát kezelhetősége, valamint finom, letisztult egyszerű külső 
-  - A futtatáshoz bármely OS plattform megfelel, mely JRE 6 implementációt tartalmaz.
+  - A futtatáshoz bármely OS plattform megfelel, mely JDK 8+, illetve JRE 6 implementációt tartalmaz.
   
-
 ## **2. Tervezés**
 
 ### **2.1. Arcihtektúra**
 A szoftver megfelel a MVC architeltúrának. A projektet Spring keretrendszer segítségével kivitelezzük. 
+
 **Importált J2EE csomagok:**
   - JPA
   - Themyleaf
@@ -59,6 +63,14 @@ A projektben megvalósított entitásokat az alábbi osztály diagramm ábrázol
   - **User Role**: felhasználói szerepkör, autóbérlésre jogosult
 
 ## **3. Implementáció**
+
+### **3.1. Fejlesztői eszközök**
+A fejlesztés során az alábbi fejlesztői eszközök segítségét vettük alapul, mind a megvalósítás kódjának, mind a látványtervek 
+elkészítésére. 
+
+  **IDE:** Neatbeans 8.2.
+  **Tervezési eszközök:** MS Visio, SqlDeveloper
+  **Projekt eszközök:** Git Bash, Git GUI, webes felület (github.com)
 
 ## **4.Tesztelés**
 
