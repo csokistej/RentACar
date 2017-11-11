@@ -8,6 +8,8 @@ package hu.rentacar.rentacar.service;
 import hu.rentacar.rentacar.exception.CustomerNotValidException;
 import hu.rentacar.rentacar.model.Customer;
 import hu.rentacar.rentacar.repository.CustomerRepository;
+import java.util.ArrayList;
+import java.util.List;
 import javassist.NotFoundException;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +33,11 @@ public class CustomerService {
         throw new NotFoundException("Invalid Customer");
     }
 
-    public void logout() { 
-        customer = null; 
+    public Customer logout(Customer user) throws NotFoundException {
+        if (isValid(user)) {
+            customer = null;
+        }
+        throw new NotFoundException("Invalid Customer");
     } 
 
     public Customer register(Customer user) {
@@ -52,6 +57,11 @@ public class CustomerService {
         return customer; 
     } 
     
+    public List<Customer> getAllCustomer(){
+        List<Customer> result = new ArrayList<>();
+        customerRepository.findAll().forEach(result::add);
+        return result;
+    }
     
     
 }

@@ -2,6 +2,7 @@ package hu.rentacar.rentacar.controller;
 
 import hu.rentacar.rentacar.model.Customer;
 import hu.rentacar.rentacar.service.CustomerService;
+import java.util.List;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,9 +25,9 @@ public class CustomerController {
     @Autowired
     CustomerService service;
     
-    @RequestMapping("/{name}")
-    public String pathParameter(@PathVariable String name) {
-        return "Hello " + name; 
+    @GetMapping("/customers")
+    public List<Customer> getCustomers(){
+        return service.getAllCustomer();
     }
     
     @PostMapping("/login")
@@ -37,5 +38,10 @@ public class CustomerController {
     @PostMapping("/register")
     public Customer registerCustomer(@RequestBody Customer customer){
         return service.register(customer);
+    }
+    
+    @PostMapping("/logout")
+    public Customer logoutCustomer(@RequestBody Customer customer) throws NotFoundException {
+        return service.logout(customer);
     }
 }
