@@ -1,6 +1,8 @@
 target/ 
 !.mvn/wrapper/maven-wrapper.jar 
 
+!target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+
  
 ### STS ### 
 .apt_generated 
