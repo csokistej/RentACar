@@ -8,6 +8,7 @@ package hu.rentacar.rentacar.service;
 import hu.rentacar.rentacar.exception.CustomerNotValidException;
 import hu.rentacar.rentacar.model.Customer;
 import hu.rentacar.rentacar.repository.CustomerRepository;
+import javassist.NotFoundException;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,11 +24,11 @@ public class CustomerService {
     
     private Customer customer;
         
-    public Customer login(Customer user) throws CustomerNotValidException {
+    public Customer login(Customer user) throws NotFoundException {
         if (isValid(user)) {
-            return this.customer = customerRepository.findByUserName(customer.getUserName()).get();
+            return this.customer = customerRepository.findByUserName(user.getUserName()).get();
         }
-        throw new CustomerNotValidException();
+        throw new NotFoundException("Invalid Customer");
     }
 
     public void logout() { 
@@ -39,7 +40,8 @@ public class CustomerService {
     }
 
     public boolean isValid(Customer user) {
-        return customerRepository.findByUserNameAndPassword(customer.getUserName(), customer.getPassword()).isPresent();
+        System.out.println(user.getUserName());
+        return customerRepository.findByUserNameAndPassword(user.getUserName(), user.getPassword()).isPresent();
     }
     
     public boolean isLoggedIn() {
