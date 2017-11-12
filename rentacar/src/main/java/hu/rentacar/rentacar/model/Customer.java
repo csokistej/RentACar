@@ -15,9 +15,7 @@ import lombok.*;
 public class Customer extends BaseEntity {
  
     
-    @OneToMany(targetEntity = Rent.class, mappedBy = "customer") 
-    @JsonIgnoreProperties("customer") 
-    @JsonIgnore
+    @OneToMany(targetEntity = Rent.class, mappedBy = "customer")
     private List<Rent> rents;
     
     @Column(name = "username", nullable = false, unique = true)
