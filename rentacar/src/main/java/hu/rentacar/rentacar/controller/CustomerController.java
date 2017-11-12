@@ -23,11 +23,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
     
     @Autowired
-    CustomerService service;
+    CustomerService service; 
     
+    //This is a bit dangerous endpoint!!!
     @GetMapping("/customers")
     public List<Customer> getCustomers(){
         return service.getAllCustomer();
+    }
+    
+    @GetMapping("/logged")
+    public Customer getLoggedInCustomers(){
+        return service.getLoggedInCustomers();
     }
     
     @PostMapping("/login")
@@ -43,5 +49,10 @@ public class CustomerController {
     @PostMapping("/logout")
     public Customer logoutCustomer(@RequestBody Customer customer) throws NotFoundException {
         return service.logout(customer);
+    }
+    
+    @PostMapping("/update")
+    public Customer updateCustomer(@RequestBody Customer customer){
+        return service.update(customer);
     }
 }

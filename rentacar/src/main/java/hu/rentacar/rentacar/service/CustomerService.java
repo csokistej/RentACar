@@ -10,11 +10,14 @@ import hu.rentacar.rentacar.model.Customer;
 import hu.rentacar.rentacar.repository.CustomerRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import javassist.NotFoundException;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 @SessionScope
@@ -25,7 +28,8 @@ public class CustomerService {
     private CustomerRepository customerRepository;
     
     private Customer customer;
-        
+    
+    //ToDo: Where is rents from the return value
     public Customer login(Customer user) throws NotFoundException {
         if (isValid(user)) {
             return this.customer = customerRepository.findByUserName(user.getUserName()).get();
@@ -53,15 +57,31 @@ public class CustomerService {
         return customer != null;
     }
     
-    public Customer getLoggedInUser() { 
+    public Customer getLoggedInCustomers() { 
         return customer; 
-    } 
+    }
     
     public List<Customer> getAllCustomer(){
         List<Customer> result = new ArrayList<>();
         customerRepository.findAll().forEach(result::add);
+        result.forEach(c -> c.setPassword(null));
         return result;
     }
     
+    public Customer update(Customer newCustomer) {
+        Customer customeR = customerRepository.findByUserName(newCustomer.getUserName()).get(); //ToDo if empty the Optional
+        System.out.println(customeR.getUserName());
+        copyToEntity(newCustomer, customer);
+        return this.customer = customerRepository.save(customer);
+    }
     
+    private void copyToEntity(Customer newCustomer, Customer oldCustomer){
+        oldCustomer.setPassword(newCustomer.getPassword());
+        oldCustomer.setAccountNumber(newCustomer.getAccountNumber());
+        oldCustomer.setAddress(newCustomer.getAddress());
+        oldCustomer.setDrivingLicense(newCustomer.getDrivingLicense());
+        oldCustomer.setEmail(newCustomer.getEmail());
+        oldCustomer.setFullName(newCustomer.getFullName());
+        oldCustomer.setRents(newCustomer.getRents());
+    }
 }
