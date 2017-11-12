@@ -70,7 +70,6 @@ public class CustomerService {
     
     public Customer update(Customer newCustomer) {
         Customer customeR = customerRepository.findByUserName(newCustomer.getUserName()).get(); //ToDo if empty the Optional
-        System.out.println(customeR.getUserName());
         copyToEntity(newCustomer, customer);
         return this.customer = customerRepository.save(customer);
     }
