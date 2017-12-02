@@ -10,8 +10,7 @@ public interface CarRepository extends CrudRepository<Car, Long>{
     
     Iterable<Car> findAllByRents(Rent rent);
     
-    Optional<Car> findById(Long id);
-    
     Optional<Car> findByCarType(String carType);
     
+    Optional<Car> findById(Long id);
 }

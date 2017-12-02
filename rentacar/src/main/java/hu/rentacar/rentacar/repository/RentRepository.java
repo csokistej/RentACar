@@ -12,9 +12,8 @@ import org.springframework.stereotype.Repository;
 public interface RentRepository extends CrudRepository<Rent, Long> {
     
     Iterable<Rent> findAllByCustomer(Customer customer);
+    
     Iterable<Rent> findAllByCar(Car car);
-
     
-    
-    
+    Optional<Rent> findById(Long id);
 }

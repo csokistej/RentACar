@@ -1,4 +1,3 @@
-
 package hu.rentacar.rentacar.model;
 
 import com.fasterxml.jackson.annotation.*;
