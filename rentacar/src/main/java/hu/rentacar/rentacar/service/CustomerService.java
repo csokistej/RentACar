@@ -49,7 +49,6 @@ public class CustomerService {
     }
 
     public boolean isValid(Customer user) {
-        System.out.println(user.getUserName());
         return customerRepository.findByUserNameAndPassword(user.getUserName(), user.getPassword()).isPresent();
     }
     
