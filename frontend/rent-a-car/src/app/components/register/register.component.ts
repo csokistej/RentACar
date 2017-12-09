@@ -9,11 +9,10 @@ import { Customer } from '../../models/Customer';
 export class RegisterComponent implements OnInit {
 
   @Input() customer: Customer
-  model: Customer
+  model: Customer = new Customer();
   @Output() onSubmit = new EventEmitter<Customer>();
   
-  constructor() { 
-    this.model.userName = "Pff"
+  constructor() {
   }
 
   ngOnInit() {
