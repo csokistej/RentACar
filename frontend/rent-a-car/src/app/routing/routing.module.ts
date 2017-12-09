@@ -20,25 +20,25 @@ const routes: Routes = [
   {
     path: 'cars',
     component: CarListComponent,
-    canActivate: [AuthGuard],
-    data: {roles: ['USER', 'ADMIN']}
+  //  canActivate: [AuthGuard], //ha ezt kivesszük engedi, tök mind1 hogy guestet beleteszem-e
+    data: {roles: ['CUSTOMER', 'ADMIN', 'GUEST']}
   },
   {
       path: 'rent-form',
       component: RentFormComponent,
       canActivate: [AuthGuard],
-      data: {roles: ['USER', 'ADMIN']}
+      data: {roles: ['CUSTOMER', 'ADMIN']}
   },
- /* {
+/*  {
     path: 'cars/:id',
-    component: IssueDetailComponent,
+    component: CarListComponent,
     canActivate: [AuthGuard],
     data: {roles: ['USER', 'ADMIN']}
   },*/
   {
       path: 'register',
       component: RegisterComponent, 
-      data: {roles: ['USER', 'ADMIN', 'GUEST']}
+   //   data: {roles: ['USER', 'ADMIN', 'GUEST']}
 
   },
   {

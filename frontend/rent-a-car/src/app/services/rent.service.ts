@@ -14,11 +14,11 @@ const httpOptions = {
 export class RentService {
 
     rents: Rent[] = [
-
+        
     ];
 
     constructor(private http:HttpClient){
-
+    
     }
 
     getRents() : Observable<Rent[]> {

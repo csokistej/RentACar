@@ -45,4 +45,7 @@ export class CarService {
         ).toPromise();
     }
     //hogy a rákba kéne törölni?
+    deleteCar(id: number, car:Car): Promise<Car> {
+        return this.http.delete<Car>(`/api/cars/delete/${id}`).toPromise();
+    }
 }

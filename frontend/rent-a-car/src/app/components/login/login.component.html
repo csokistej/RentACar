@@ -1,3 +1,57 @@
-<p>
-  login works!
-</p>
+<h2 céass="display-2">
+  Bejelentkezés
+</h2>
+<form submit="submit(f)" f="ngForm">
+  <div class="form-group">
+  {{ message }}
+  <mat-form-field>
+    <input name="username" [(ngModel)]="model.username" matInput type="text" placeholder="Felhasználónév" required #username="ngModel" />
+    <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">Felhasználónév mező kitöltése szükséges!</mat-error>
+  </mat-form-field>
+  </div>
+  <div class="form-group">
+      <mat-form-field>
+        <input name="password" [(ngModel)]="model.password" matInput type="password" placeholder="Jelszó" required #password="ngModel" />
+        <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+        Jelszó mező kitöltése szükséges!
+       </mat-error>
+      </mat-form-field>
+  </div>
+</form>
+<!--
+<form (submit)="submit(f)" #f="ngForm">
+  {{ message }}
+  <div class="form-group">
+    <mat-form-field>
+      Felhasználó
+      <input
+        name="username"
+        [(ngModel)]="model.username"
+        matInput type="text"
+        placeholder="Felhasználónév"
+        required
+        #username="ngModel">
+      <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+        Felhasználónév mező kötelező!
+      </mat-error>
+    </mat-form-field>
+  </div>
+   <div class="form-group">
+    <mat-form-field>
+      Jelszó
+      <input
+        name="password"
+        [(ngModel)]="model.password"
+        matInput type="password"
+        placeholder="Jelszó"
+        required
+        #password="ngModel">
+      <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+        Jelszó mező kötelező!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button [disabled]="f.invalid" type="submit" mat-raised-button color="primary">Bejelentkezés</button>
+</form>
+
+-->

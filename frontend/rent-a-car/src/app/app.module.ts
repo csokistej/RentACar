@@ -3,14 +3,13 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
-//import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-//import { MaterialItemsModule } from "./modules/material-items.module";
+import { MaterialItemsModule } from "./modules/material-items.module";
 import { AppComponent } from './components/app/app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { RentFormComponent } from './components/rent-form/rent-form.component';
-
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -18,7 +17,13 @@ import { CarService } from './services/car.service';
 import { RentService } from './services/rent.service';
 import { AuthService } from './services/auth.service';
 import { RoutingModule } from './routing/routing.module'; 
+import { AuthGuard } from './auth.guard';
 
+//make components and install required modules first!
+//ng g c [component_name] //to each component...
+//npm install @angular/material @angular/cdk @angular/animations 
+//npm install @angular/fles-layout-builds
+//then import
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +37,13 @@ import { RoutingModule } from './routing/routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-  //  FlexLayoutModule,
+    FlexLayoutModule,
     RoutingModule,
     FormsModule,
     HttpClientModule,
-   // MaterialItemsModule
+    MaterialItemsModule
   ],
-  providers: [ CarService, RentService],
+  providers: [ CarService, RentService, AuthService, AuthGuard ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

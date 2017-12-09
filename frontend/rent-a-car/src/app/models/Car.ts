@@ -9,4 +9,5 @@ export class Car {
     distance: number = 0;
     pricePerHour: number = 0;
     available: boolean = true;
+    
 }

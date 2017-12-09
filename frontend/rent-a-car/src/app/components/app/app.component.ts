@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { AuthService } from "../../services/auth.service";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = 'Rent-A-Car app';
 
   constructor(
-    //private authService: AuthService
+    private authService: AuthService
   ) {}
 
   ngOnInit() {

@@ -2,6 +2,7 @@
 package hu.rentacar.rentacar.model;
 
 import com.fasterxml.jackson.annotation.*;
+import hu.rentacar.rentacar.annotation.Role;
 import java.util.List;
 import javax.persistence.*;
 import lombok.*;
@@ -39,4 +40,10 @@ public class Customer extends BaseEntity {
     @Column(name = "accountnumber", nullable = false)
     private String accountNumber;
     
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+    public enum Role {
+        GUEST, CUSTOMER, ADMIN
+    }
 }

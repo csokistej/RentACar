@@ -1,3 +1,57 @@
-<p>
-  menu works!
-</p>
+<mat-toolbar color="warn">
+  <button mat-button routerLink="/">Home</button>
+  <span class="fill-remaining-space" fxHide="false" fxHide.gr-sm></span>
+  <div class="w-100" fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button routerLink="/cars">Cars</button>
+    <span class="fill-remaining-space"></span>
+    <div *ngIf="!authService.isLoggedIn">
+      <button mat-button routerLink="/login">Sign in</button>
+      <button mat-button routerLink="/register">Sign up</button>
+    </div>
+    <div *ngIf="authService.isLoggedIn">
+      <span>Hello, {{ authService.user.username }}!</span>
+      <button mat-button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</mat-toolbar>
+
+
+<!-- 
+  <hr style="widht:100%; border:2px solid black;"></hr>
+  <mat-toolbar color="primary">
+  <button mat-button routerLink="/">
+    <mat-icon>Home</mat-icon>
+    Home
+  </button>
+
+  <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
+  <div class="w-100" fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-menu-item routerLink="/dashboard">Home</button>
+    <button mat-button routerLink="/cars">Cars</button>
+    <span class="fill-remaining-space"></span>
+    <div *ngIf="!authService.isLoggedIn">
+      <button mat-button routerLink="/login">Bejelentkezés</button>
+      <button mat-button routerLink="/register">Regisztráció</button>
+    </div>
+    <div *ngIf="authService.isLoggedIn">
+      <span>Hello, {{ authService.customer.username }}!</span>
+      <button mat-button (click)="logout()">Kijelentkezés</button>
+    </div>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu xPosition="before" #menu="matMenu">
+  <button mat-menu-item routerLink="/dashboard">Home</button>
+  <button mat-menu-item routerLink="/cars">Cars</button>
+  <div *ngIf="!authService.isLoggedIn">
+    <button mat-menu-item routerLink="/login">Login</button>
+    <button mat-menu-item routerLink="/register">Register</button>
+  </div>
+  <div *ngIf="authService.isLoggedIn">
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </div>
+</mat-menu> 
+-->

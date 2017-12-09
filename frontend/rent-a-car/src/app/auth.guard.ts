@@ -18,11 +18,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
     if (this.authService.isLoggedIn) {
-      if (next.data.roles && next.data.roles.includes(this.authService.customer.userName, this.authService.customer.password)) {
+      if (next.data.role && next.data.roles.includes(this.authService.customer.role)) {
         return true;
       } else {
         // this.router.navigate(['/login']);
-        console.log('No permission');
+        console.log('Hozzáférés megtagadva!');
         return false;
       }
     }
