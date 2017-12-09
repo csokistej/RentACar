@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this.onSubmit.emit(this.model);
+    console.log(this.model) //Itt van a Customer ha kell valamire
   }
 
 }
