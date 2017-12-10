@@ -21,11 +21,11 @@ export class CarService {
     }
 
     getCars() : Observable<Car[]> {
-        return this.http.get<Car[]>('api/cars');
+        return this.http.get<Car[]>('api/car/all');
     }
 
     getCar(id: number) : Promise<Car> {
-        return this.http.get<Car>(`api/cars/${id}`).toPromise();
+        return this.http.get<Car>(`api/car/${id}`).toPromise();
      }
 
     addCar(car: Car) {
@@ -38,13 +38,13 @@ export class CarService {
 
     updateCar(id: number, issue:Car): Promise<Car> {
         return this.http.put<Car>(
-        `api/cars/${id}`,
+        `api/car/${id}`,
         issue,
         httpOptions
         ).toPromise();
     }
     //hogy a rákba kéne törölni?
     deleteCar(id: number, car:Car): Promise<Car> {
-        return this.http.delete<Car>(`/api/cars/delete/${id}`).toPromise();
+        return this.http.delete<Car>(`/api/car/delete/${id}`).toPromise();
     }
 }
