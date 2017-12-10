@@ -56,7 +56,7 @@ export class AuthService {
     // https://stackoverflow.com/a/46816238
     return this.http.post(
         'api/customer/logout',
-        {},
+        this.customer,
         httpOptions
       )
       .pipe(

@@ -40,6 +40,7 @@ public class CustomerService {
     public Customer logout(Customer user) throws NotFoundException {
         if (isValid(user)) {
             customer = null;
+            return new Customer();
         }
         throw new NotFoundException("Invalid Customer");
     } 
