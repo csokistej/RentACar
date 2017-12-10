@@ -1,4 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
+import { AuthService } from "../../services/auth.service";
 import { Customer } from '../../models/Customer';
 
 @Component({
@@ -8,26 +10,39 @@ import { Customer } from '../../models/Customer';
 })
 export class RegisterComponent implements OnInit {
 
-  @Input() customer: Customer
+  //@Input() customer: Customer
   model: Customer = new Customer();
-  @Output() onSubmit = new EventEmitter<Customer>();
+ // @Output() onSubmit = new EventEmitter<Customer>();
+
+  message: string = '';
   
-  constructor() {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
   }
 
-  ngOnChanges(){
+  /*ngOnChanges(){
     this.model = Object.assign({}, this.customer);
-  }
+  }*/
 
-  submit(form) {
-    if(!form.valid){
+  async submit(form) {
+    if (form.invalid) {
       return;
     }
-    this.onSubmit.emit(this.model);
-    console.log(this.model) //Itt van a Customer ha kell valamire
+    try {
+      this.message = 'Try to register';
+      await this.authService.register(this.model);
+      console.log('success')
+      this.router.navigate([this.authService.redirectUrl]);
+    }
+    catch(e) {
+      this.message = 'Register failed';
+      console.log(e);
+    }
   }
 
 }

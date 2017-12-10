@@ -34,7 +34,7 @@ public class Customer extends BaseEntity {
     @Column(name = "address", nullable = false)
     private String address;
             
-    @Column(name = "license", nullable = false, unique = true)
+    @Column(name = "license", nullable = false)
     private String drivingLicense;
      
     @Column(name = "accountnumber", nullable = false)

@@ -36,6 +36,22 @@ export class AuthService {
       .toPromise();
   }
 
+  register(customer: Customer) {
+    return this.http.post<Customer>(
+      // 'http://localhost:4200/api/customer/login',
+      'api/customer/register',
+      customer,
+      httpOptions
+    )
+    .pipe(
+      tap((customer: Customer) => {
+        this.isLoggedIn = true;
+        this.customer = customer;
+      })
+    )
+    .toPromise();
+  }
+
   logout() {
     // https://stackoverflow.com/a/46816238
     return this.http.post(
