@@ -25,7 +25,7 @@ public class Car extends BaseEntity {
     @Column(name = "car_type", nullable = false)
     private String carType;
     
-    @Column(name = "", nullable = false )
+    @Column(name = "age", nullable = false )
     private Integer age;
     
     @Column(name = "distance", nullable = false)

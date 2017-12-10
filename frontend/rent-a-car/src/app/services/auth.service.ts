@@ -22,7 +22,6 @@ export class AuthService {
 
   login(customer: Customer) {
     return this.http.post<Customer>(
-        // 'http://localhost:4200/api/customer/login',
         'api/customer/login',
         customer,
         httpOptions
@@ -31,6 +30,7 @@ export class AuthService {
         tap((customer: Customer) => {
           this.isLoggedIn = true;
           this.customer = customer;
+          this.customer.role = 'CUSTOMER'
         })
       )
       .toPromise();
@@ -38,7 +38,6 @@ export class AuthService {
 
   register(customer: Customer) {
     return this.http.post<Customer>(
-      // 'http://localhost:4200/api/customer/login',
       'api/customer/register',
       customer,
       httpOptions
@@ -47,13 +46,13 @@ export class AuthService {
       tap((customer: Customer) => {
         this.isLoggedIn = true;
         this.customer = customer;
+        this.customer.role = 'CUSTOMER'
       })
     )
     .toPromise();
   }
 
   logout() {
-    // https://stackoverflow.com/a/46816238
     return this.http.post(
         'api/customer/logout',
         this.customer,
