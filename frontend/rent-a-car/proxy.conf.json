@@ -1,6 +1,6 @@
-{   
-   "/api": { //nah ezt kéne csak simán /-re ha nincs api könyvtár a backendben
-    "target": "http://localhost:8181", //portra küldés
-    "secure": false //??? hát ezt wtf, de gondolom azt jelenti csak hogy nem SSL-layeren küldi
-  } 
-} 
+{
+  "/api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  }
+}

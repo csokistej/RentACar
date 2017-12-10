@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rent")
+@RequestMapping("/api/rent")
 public class RentController {
     
     private static final String ID = "{id}";
