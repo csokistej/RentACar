@@ -12,8 +12,8 @@ import { CarService } from '../../services/car.service';
 export class CarListComponent implements OnInit {
 
    cars: Car[] = [];
-   selectedCar: Car;
-   //vagy selectedId: number = 0;
+   //selectedCar: Car;
+   selectedId: number = 0;
    filteredCars: Car[] = [];
 
    constructor(
@@ -28,6 +28,12 @@ export class CarListComponent implements OnInit {
   }
 
 //nah hogy mi alapján kéne leszürni az nincs meg *<|:-( santa is sad
-
+  /*filterIssues() {
+    this.filteredCars = this.filteredCars === ''
+      ? this.cars
+      : this.cars.filter(
+          car => car.available === 'T'
+        )
+  }*/
 
 }

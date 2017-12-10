@@ -25,7 +25,6 @@ export class CarService {
     }
 
     getCar(id: number) : Promise<Car> {
-        //return this.issues.find(i => i.id == id);
         return this.http.get<Car>(`api/cars/${id}`).toPromise();
      }
 

@@ -8,6 +8,6 @@ export class Car {
     age: number = 0;
     distance: number = 0;
     pricePerHour: number = 0;
-    available: boolean = true;
+    available: String = 'T';
     
 }
