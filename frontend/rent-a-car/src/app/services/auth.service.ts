@@ -62,7 +62,7 @@ export class AuthService {
         tap(res => {
           console.log('service logout', res);
           this.isLoggedIn = false;
-          this.customer = new Customer();
+          this.customer = null;
         })
       ).toPromise();
   }

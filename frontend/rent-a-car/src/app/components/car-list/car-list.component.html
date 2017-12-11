@@ -25,6 +25,7 @@
           <td>{{ car.available }}</td>
           <td>
             <button
+              [disabled] = "!authService.isLoggedIn"
               class = "btn btn-primary"
               (click)="onCreateRent(car.id)">
               Rent

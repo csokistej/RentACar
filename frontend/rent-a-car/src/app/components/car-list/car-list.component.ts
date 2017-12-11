@@ -52,6 +52,7 @@ export class CarListComponent implements OnInit {
       return;
     }
     try {
+      this.selectedId = 0
       this.rent.car = this.selectedCar;
       this.rent.customer = this.authService.customer;
       this.message = 'Try to register';
