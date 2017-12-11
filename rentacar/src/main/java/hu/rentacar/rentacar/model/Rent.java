@@ -15,17 +15,14 @@ public class Rent extends BaseEntity {
        
     @JoinColumn
     @ManyToOne(targetEntity = Customer.class, optional = false)
-    @JsonIgnoreProperties("rents")
     private Customer customer;
     
     @JoinColumn
     @ManyToOne(targetEntity = Car.class, optional = false)
-    @JsonIgnoreProperties("rents")
     private Car car;
     
     @JoinColumn
-    @ManyToOne(targetEntity = RentalStatus.class, optional = false)
-    @JsonIgnoreProperties("rents")
+    @ManyToOne(targetEntity = RentalStatus.class)
     private RentalStatus rentalstatus;
         
     @Column(name = "start_date", nullable = false)

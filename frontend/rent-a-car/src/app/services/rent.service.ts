@@ -13,9 +13,8 @@ const httpOptions = {
 @Injectable()
 export class RentService {
 
-    rents: Rent[] = [
-        
-    ];
+    rents: Rent[] = [];
+    redirectUrl: string;
 
     constructor(private http:HttpClient){
     
@@ -32,10 +31,11 @@ export class RentService {
 
     addRent(rent: Rent) {
     console.log(rent);
-    return this.http.post( //ebböl kifolyólag a törlést post(és 1 törlésere vonatkozo url pl /deleteCustomer/id..)
-      `api/rents`,
+    return this.http.post(
+      `api/rent/add`,
       rent
     ).toPromise();
+
   }
 
     updateIssue(id: number, rent:Rent): Promise<Rent> {

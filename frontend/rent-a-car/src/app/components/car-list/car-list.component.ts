@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { Car } from '../../models/Car';
-import { CarService } from '../../services/car.service';
+import { CarService} from '../../services/car.service';
+import { AuthService } from '../../services/auth.service';
+import { RentService } from '../../services/rent.service';
+import { Rent } from '../../models/Rent';
 
 
 
@@ -12,12 +16,18 @@ import { CarService } from '../../services/car.service';
 export class CarListComponent implements OnInit {
 
    cars: Car[] = [];
-   //selectedCar: Car;
+   selectedCar: Car = new Car();
    selectedId: number = 0;
-   filteredCars: Car[] = [];
+   filteredCars: Car[];
+   rent: Rent = new Rent();
+
+   message: string = '';
 
    constructor(
-    private carService: CarService,
+    private carService: CarService, 
+    private authService: AuthService,
+    private rentService: RentService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -27,13 +37,35 @@ export class CarListComponent implements OnInit {
     });
   }
 
-//nah hogy mi alapján kéne leszürni az nincs meg *<|:-( santa is sad
-  /*filterIssues() {
-    this.filteredCars = this.filteredCars === ''
-      ? this.cars
-      : this.cars.filter(
-          car => car.available === 'T'
-        )
-  }*/
+  onCreateRent(carId: number){
+    this.selectedId = carId
+
+    this.selectedCar = this.cars[ carId - 1 ]
+  }
+
+  onCancelRent(){
+    this.selectedId = 0
+  }
+
+  async submit(form) {
+    if (form.invalid) {
+      return;
+    }
+    try {
+      this.rent.car = this.selectedCar;
+      this.rent.customer = this.authService.customer;
+      this.message = 'Try to register';
+      console.log(this.rent)
+      await this.rentService.addRent(this.rent);
+      console.log('success')
+      this.router.navigate([this.rentService.redirectUrl]);
+    }
+    catch(e) {
+      this.message = 'Rent failed';
+      console.log(e);
+    }
+  }
+
+//nah hogy mi alapján kéne leszürni az nincs meg *<|:-( santa is sad*/
 
 }

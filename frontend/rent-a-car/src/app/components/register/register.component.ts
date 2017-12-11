@@ -10,9 +10,7 @@ import { Customer } from '../../models/Customer';
 })
 export class RegisterComponent implements OnInit {
 
-  //@Input() customer: Customer
   model: Customer = new Customer();
- // @Output() onSubmit = new EventEmitter<Customer>();
 
   message: string = '';
   
