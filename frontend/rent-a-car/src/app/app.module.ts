@@ -19,11 +19,6 @@ import { AuthService } from './services/auth.service';
 import { RoutingModule } from './routing/routing.module'; 
 import { AuthGuard } from './auth.guard';
 
-//make components and install required modules first!
-//ng g c [component_name] //to each component...
-//npm install @angular/material @angular/cdk @angular/animations 
-//npm install @angular/fles-layout-builds
-//then import
 @NgModule({
   declarations: [
     AppComponent,

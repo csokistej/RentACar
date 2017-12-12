@@ -20,6 +20,7 @@ export class CarListComponent implements OnInit {
    selectedId: number = 0;
    filteredCars: Car[];
    rent: Rent = new Rent();
+   rents: Rent[] = [];
 
    message: string = '';
 
@@ -33,7 +34,6 @@ export class CarListComponent implements OnInit {
   ngOnInit() {
     this.carService.getCars().subscribe(cars => {
       this.cars = cars;
-   // this.filterCars();
     });
   }
 
@@ -66,7 +66,5 @@ export class CarListComponent implements OnInit {
       console.log(e);
     }
   }
-
-//nah hogy mi alapján kéne leszürni az nincs meg *<|:-( santa is sad*/
 
 }

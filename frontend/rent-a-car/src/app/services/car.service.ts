@@ -43,7 +43,6 @@ export class CarService {
         httpOptions
         ).toPromise();
     }
-    //hogy a rákba kéne törölni?
     deleteCar(id: number, car:Car): Promise<Car> {
         return this.http.delete<Car>(`/api/car/delete/${id}`).toPromise();
     }

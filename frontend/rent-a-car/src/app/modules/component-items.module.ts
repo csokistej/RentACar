@@ -6,7 +6,6 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { LoginComponent } from '../components/login/login.component';
 import { NgModule } from "@angular/core";
 
-//eléggé sovány még, -> ha részletezni akarunk dolgokat (pl rendelés feedback, registerform)
 @NgModule({
   imports: [
     MainPageComponent,

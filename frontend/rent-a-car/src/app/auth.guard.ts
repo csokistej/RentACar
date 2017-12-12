@@ -21,7 +21,6 @@ export class AuthGuard implements CanActivate {
       if (next.data.role && next.data.roles.includes(this.authService.customer.role)) {
         return true;
       } else {
-        // this.router.navigate(['/login']);
         console.log('Hozzáférés megtagadva!');
         return false;
       }

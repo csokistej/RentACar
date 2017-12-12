@@ -25,7 +25,6 @@ export class RentService {
     }
 
     getRent(id: number) : Promise<Rent> {
-        //return this.issues.find(i => i.id == id);
         return this.http.get<Rent>(`api/rents/${id}`).toPromise();
      }
 
