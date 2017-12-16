@@ -1,0 +1,131 @@
+<h1 class="display-6">New Customer</h1>
+<form (submit)="submit(registerForm)" #registerForm="ngForm">
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="name"
+        [(ngModel)]="model.userName"
+        matInput type="text"
+        placeholder="Enter username"
+        required pattern="[ a-zA-Z ][ 1-9a-zA-Z ][1-9a-zA-Z ]+"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Username is required!
+      </mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+        Username must start with letter!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="password"
+        [(ngModel)]="model.password"
+        matInput type="password"
+        placeholder="Enter password"
+        required pattern="[ 1-9a-zA-Z ]+"
+        #name="ngModel">
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+          Password is required!
+        </mat-error>
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+          Password must contain letter or number!
+        </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="fullName"
+        [(ngModel)]="model.fullName"
+        matInput type="text"
+        placeholder="Enter full Name"
+        required pattern="[ a-zA-Z ]+"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Full Name is required!
+      </mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+        Full Name must start with letter!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="email"
+        [(ngModel)]="model.email"
+        matInput type="email"
+        placeholder="Enter email"
+        required pattern="[ 1-9a-zA-Z ]+@[ 1-9a-zA-Z ]+.[ 1-9a-zA-Z ]+"
+        #name="ngModel">
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+          Email is required!
+        </mat-error>
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+          Email must is in email format!
+        </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="address"
+        [(ngModel)]="model.address"
+        matInput type="text"
+        placeholder="Enter address"
+        required pattern="[ a-zA-Z ]+"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Address is required!
+      </mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+        Address must start with letter!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="drivingLicense"
+        [(ngModel)]="model.drivingLicense"
+        matInput type="text"
+        placeholder="Enter driving license ID"
+        required pattern="[ 1-9 ][ 1-9 ][ 1-9 ][ 1-9 ][ 1-9 ][ 1-9 ][ A-Z ][ A-Z ]"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Driving license ID is required!
+      </mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+        Driving license ID format: 123456AB!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="accountNumber"
+        [(ngModel)]="model.accountNumber"
+        matInput type="text"
+        placeholder="Enter account number"
+        required pattern="[ 1-9 ][ 1-9 ][ 1-9 ][ 1-9 ][ 1-9 ][ 1-9 ]"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Account number is required!
+      </mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+        Account number format: 123456!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button [disabled]="!registerForm.valid" type="submit" mat-raised-button color="warn">Sign up! </button>
+</form>

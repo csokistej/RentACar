@@ -1,0 +1,30 @@
+<h1 class="display-6">My Rents</h1>
+<div class="row" *ngIf="authService.isLoggedIn">
+    <div class="col">
+      <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Car </th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Price</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rent of rents" >
+          <th scope="row">{{ rent.id }}</th>
+          <td>{{ rent.car.carType }}</td>
+          <td>{{ rent.startDate }}</td>
+          <td>{{ rent.endDate }}</td>
+          <td>{{ rent.price }}</td>
+          <td>status</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row" *ngIf="!authService.isLoggedIn">
+  <p>You have to be signed in first! Please sign in and try again!</p>
+</div>

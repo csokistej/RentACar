@@ -1,0 +1,16 @@
+<mat-toolbar color="warn">
+  <button mat-button routerLink="/">Home</button>
+  <span class="fill-remaining-space" fxHide="false" fxHide.gr-sm></span>
+  <div class="w-100" fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button routerLink="/cars">Cars</button>
+    <span class="fill-remaining-space"></span>
+    <div *ngIf="!authService.isLoggedIn">
+      <button mat-button routerLink="/login">Sign in</button>
+      <button mat-button routerLink="/register">Sign up</button>
+    </div>
+    <div *ngIf="authService.isLoggedIn">
+        <button mat-button routerLink="/customer-rents">My Rents</button>
+      <button mat-button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</mat-toolbar>

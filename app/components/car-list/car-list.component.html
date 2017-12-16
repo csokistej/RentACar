@@ -1,0 +1,78 @@
+<h1 class="display-6" *ngIf="selectedId == 0">Cars</h1>
+
+<div class="row" *ngIf="selectedId == 0">
+  <div class="col">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Car type</th>
+          <th scope="col">Age</th>
+          <th scope="col">Distance</th>
+          <th scope="col">Price/Hour</th>
+          <th scope="col">Rent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+          <th scope="row">{{ car.id }}</th>
+          <td> {{ car.carType }}</td>
+          <td>{{ car.age }}</td>
+          <td>{{ car.distance }}</td>
+          <td>{{ car.pricePerHour }}</td>
+          <td>
+            <button
+              [disabled] = "!authService.isLoggedIn"
+              class = "btn btn-warn"
+              (click)="onCreateRent(car.id)">
+              Rent it!
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h1 class="display-6" *ngIf="selectedId > 0">Rent</h1>
+<div class="row" *ngIf="selectedId > 0">
+    <div class="col">
+        <form (submit)="submit(registerForm)" #registerForm="ngForm">
+            <div class="form-group">
+                <mat-form-field>
+                    <input
+                    name="startDate"
+                    [(ngModel)]="rent.startDate"
+                    matInput type="date"
+                    placeholder="Give the rent's start date"
+                    required
+                    #name="ngModel">
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input
+                    name="endDate"
+                    [(ngModel)]="rent.endDate"
+                    matInput type="date"
+                    placeholder="Give the rent's end date"
+                    required
+                    #name="ngModel">
+                </mat-form-field>
+            </div>
+            <button 
+              type="submit" 
+              mat-raised-button 
+              color="warn">
+                Rent it
+            </button>
+            <button
+            class = "btn btn-warn"
+            (click)="onCancelRent()">
+              Cancel
+          </button>
+        </form>
+
+    </div>
+</div>

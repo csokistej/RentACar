@@ -1,0 +1,41 @@
+<h1 class="display-6">New Customer</h1>
+<form (submit)="submit(registerForm)" #registerForm="ngForm">
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="name"
+        [(ngModel)]="model.userName"
+        matInput type="text"
+        placeholder="Enter username"
+        required pattern="[ a-zA-Z ][ 1-9a-zA-Z ][1-9a-zA-Z ]+"
+        #name="ngModel">
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Username is required!
+      </mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+        Username must start with letter!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <input
+        name="password"
+        [(ngModel)]="model.password"
+        matInput type="password"
+        placeholder="Enter password"
+        required pattern="[ 1-9a-zA-Z ]+"
+        #name="ngModel">
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+          Password is required!
+        </mat-error>
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.pattern">
+          Password must contain letter or number!
+        </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button [disabled]="!registerForm.valid" type="submit" mat-raised-button color="warn">Login</button>
+</form>
